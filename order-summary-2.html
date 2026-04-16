@@ -1,0 +1,826 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% set pageName = "Order summary" %}
+
+{% block pageTitle %}
+{{ pageName}} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<h2 class="govuk-heading-l">{{pageName}}</h2>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+        1. Local authority and property postcode
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+
+  rows: [
+
+    [
+      {
+        text: "Local authority serving the property",
+        classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "Anytown Borough Council"
+      }
+    ],
+       [
+      {
+        text: "Full postcode of the property"
+      },
+      {
+        text: "AT99 1AB"
+      }
+    ]
+  ]
+}) }}
+</div>
+  
+</div>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      2. Title numbers
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Transactions ",
+        classes: "govuk-!-width-one-third"
+    },
+    {
+      text: "Title numbers",
+      classes: "govuk-!-width-two-thirds"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Charging order"
+      },
+      {
+        text: "SY123456"
+      }
+    ]
+
+  ]
+}) }}
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      3. The application affects
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+<p>The whole of the title</p>
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      4-a. Application, priority and fees
+    </h2>
+  </div>
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+ {{ govukTable({
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Application priority",
+      classes: "govuk-!-width-one-third"
+    },
+    {
+      text: "Price paid/Value(£)",
+      classes: "govuk-!-width-one-third"
+    },
+    {
+      text: "Fees  (£)",
+      classes: "govuk-!-width-one-third"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Charging order"
+      },
+      {
+        text: "Not provided"
+      },
+      {
+        text: "20"
+      }
+    ],
+    [
+    {
+        text: "Charging"
+      },
+      {
+        text: "Not provided"
+      },
+      {
+        text: "20"
+      }
+    ],
+        [
+    {
+        text: "Charging order"
+      },
+      {
+        text: "Not provided"
+      },
+      {
+        text: "20"
+      }
+    ]
+
+  ]
+}) }}
+</div>
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+ {{ govukTable({
+  firstCellIsHeader: false,
+
+  rows: [
+   
+    [
+    {
+        text: "Total Fees (£)",
+        classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "60",
+        classes: "govuk-!-width-two-thirds"
+      }
+    ],
+        [
+    {
+        text: "Fee payment method"
+      },
+      {
+        text: "Direct Debit"
+      },
+      {
+        text: ""
+      }
+    ]
+  ]
+}) }}
+</div>
+</div>
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "  4-b. Application, priority and fees"
+    }
+  },
+
+  rows: [
+    {
+      key: {
+        text: "Application priority"
+              },
+      value: {
+        text: "Charging order"
+      }
+    },
+    {
+      key: {
+        text: "Price paid/Value(£)"
+      },
+      value: {
+        text: "Not provided"
+      }
+    },
+    {
+      key: {
+        text: "	Fees (£)"
+      },
+      value: {
+        html: "20"
+      }
+    },
+    {
+      key: {
+        text: "Application priority"
+              },
+      value: {
+        text: "Charging order"
+      }
+    },
+    {
+      key: {
+        text: "Price paid/Value(£)"
+      },
+      value: {
+        text: "Not provided"
+      }
+    },
+    {
+      key: {
+        text: "	Fees (£)"
+      },
+      value: {
+        text:"20"
+      }
+    },
+            {
+      key: {
+        text: "Application priority"
+      },
+      value: {
+        text:"Charging order"
+      }
+    },
+        {
+      key: {
+        text: "Price paid/Value(£)"
+      },
+      value: {
+        text: "Not provided"
+      }
+    },
+    {
+      key: {
+        text: "	Fees (£)"
+      },
+      value: {
+        text: "20"
+      }
+    },
+    {
+      key: {
+        text: "Total Fees (£)"
+              },
+      value: {
+        text: "60"
+      }
+    },
+    {
+      key: {
+        text: "Fee payment method"
+      },
+      value: {
+        text: "Direct Debit"
+          }
+      }
+  ]
+}) }}
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      5. Documents lodged with this form
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Application attachments",
+        classes: "govuk-!-width-one-third"
+    },
+    {
+      text: "Certified copy statement"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "AN1 Agreed notice"
+
+      },
+      {
+        text: "Certified"
+      }
+    ],
+        [
+      {
+        text: "Court Order"
+
+      },
+      {
+        text: "Certified"
+      }
+    ]
+
+  ]
+}) }}
+
+<p class="govuk-!-width-two-thirds">The documents lodged with this application with a certification status of ‘Certified’ are listed and I certify they are true copies of the originals</p>
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      6. The applicant
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Applicant type ",
+        classes: "govuk-!-width-one-third"
+    },
+    {
+      text: "Application details"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Other organisation like charity, council, government department",
+          classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "The Foundation"
+      }
+    ]
+
+  ]
+}) }}
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      7. The application is sent to HM Land Registry by
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Key number",
+        classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "6",
+        classes: "govuk-!-width-two-thirds"
+      }
+    ],
+    [
+      {
+        text: "Name"
+      },
+      {
+        text: "Fred Smith"
+      }
+    ],
+       [
+      {
+        text: "Address"
+      },
+      {
+        text: "1 Anyold Street, Anytown, AnyShire, AA1 2BB"
+      }
+    ],
+           [
+      {
+        text: "Email"
+      },
+      {
+        text: "Fred@Fred.com"
+      }
+    ],
+    [
+      {
+        text: "Reference"
+      },
+      {
+        text: "1234567890"
+      }
+    ],   [
+      {
+        text: "Phone"
+      },
+      {
+        text: "07722-123456"
+      }
+    ],
+    [
+      {
+        text: "Fax"
+      },
+      {
+        text: "Not provided"
+      }
+    ]
+  ]
+}) }}
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      8. Third party notification
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+
+  rows: [
+
+    [
+      {
+        text: "Name",
+        classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "Bert Smith",
+        classes: "govuk-!-width-two-thirds"
+      }
+    ],
+       [
+      {
+        text: "Address"
+      },
+      {
+        text: "99 Sumother Street, Anytown, AnyShire, AA99 9BB"
+      }
+    ],
+           [
+      {
+        text: "Email"
+      },
+      {
+        text: "Bert@Bert.com"
+      }
+    ],
+    [
+      {
+        text: "Reference"
+      },
+      {
+        text: "1234567890"
+      }
+    ]
+  ]
+}) }}
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      9. The address for service for each proprietor of the registered estates to be entered in the register is
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+<p>The address of the property (where this is a single postal address)</p>
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      10. Names and addresses for services of the proprietor of any new charge to be entered in the register
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+
+  rows: [
+
+    [
+      {
+        text: "Name",
+        classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "Peachy Properties",
+        classes: "govuk-!-width-two-thirds"
+      }
+    ],
+       [
+      {
+        text: "Registered Address"
+      },
+      {
+        text: "Peachy Towers, Peachy Square, Anytown, AT88 1ZZ"
+      }
+    ],
+    [
+      {
+        text: "Company Registration Number"
+      },
+      {
+        text: "12345678"
+      }
+    ]
+  ]
+}) }}
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      11.  Disclosable overriding interests
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+<p class="govuk-!-width-two-thirds">This application relates to a registrable disposition and disclosable overriding interests affect the registered estate.</p>
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      12.  Confirmation of identity
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+<p>I am a conveyancer, or acting on behalf of a conveyancer</p>
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      13. Where the application is sent to HM Land Registry by a conveyancer
+    </h2>
+  </div>
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+ {{ govukTable({
+    caption: "Details of party representation",
+  captionClasses: "govuk-table__caption--s",
+  firstCellIsHeader: false,
+
+  head: [
+    {
+      text: "Role",
+      classes: "govuk-!-width-one-third"
+    },
+    {
+      text: "Name",
+      classes: "govuk-!-width-one-third"
+    },
+    {
+      text: "Represented by",
+      classes: "govuk-!-width-one-third"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Power of Attorney"
+      },
+      {
+        text: "Claire-Louise Brenland"
+      },
+      {
+        text: "Gowling WLG (UK) LLP
+              Two Snowhill
+              Birmingham
+              B4 6WR.
+              Reference:
+              SHO/2771525/JXKVAXJ09"
+      }
+    ],
+    [
+    {
+        text: "Lender"
+      },
+      {
+        text: "TSB Bank PLC"
+      },
+      {
+        text: "Lodging conveyancer"
+      }
+    ],
+        [
+    {
+        text: "Lessee Borrower"
+      },
+      {
+        text: "Siobhan Mullan"
+      },
+      {
+        text: "Lodging conveyancer"
+      }
+    ],
+        [
+    {
+        text: "Lessor"
+      },
+      {
+        text: "London & Quadrant Housing Trust"
+      },
+      {
+        text: "Gowling WLG (UK) LLP
+  Two Snowhill
+  Birmingham
+  B4 6WR
+  Reference:
+  SHO/2771525/JXKVAXJ09"
+      }
+    ]
+  ]
+}) }}
+</div>
+
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      14. Where the application is sent to Land Registry by someone who is not a  conveyancer
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Name of tranferor, landlord, transferee, tenant, borrower or lendor",
+        classes: "govuk-!-width-one-third"
+    },
+    {
+      text: "Conveyancer’s name, address and reference"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Jane Smith"
+
+      },
+      {
+        text: "Fred Smith,
+1   Anyold Street, Anytown, AnyShire, AA1 2BB"
+      }
+    ],
+        [
+      {
+        text: "Bill Smith"
+
+      },
+      {
+        text: "Fred Smith,
+1   Anyold Street, Anytown, AnyShire, AA1 2BB"
+      }
+    ],
+            [
+      {
+        text: "Sue Smith"
+
+      },
+      {
+        text: "Fred Smith,
+1   Anyold Street, Anytown, AnyShire, AA1 2BB"
+      }
+    ],
+        [
+      {
+        text: "Abi Smith"
+
+      },
+      {
+        text: "Fred Smith,
+1   Anyold Street, Anytown, AnyShire, AA1 2BB"
+      }
+    ]
+
+  ]
+}) }}
+</div>
+  
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      15. I confirm I have read and understood the warning statement connected with this application
+    </h2>
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+   <div class="govuk-summary-card__content">
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+
+  rows: [
+
+    [
+      {
+        text: "Confirmed",
+        classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "Arnold Conveyancer",
+        classes: "govuk-!-width-two-thirds"
+      }
+    ],
+       [
+      {
+        text: "Date"
+      },
+      {
+        text: "31/02/2026"
+      }
+    ]
+  ]
+}) }}
+</div>
+  
+</div>
+
+{% endblock %}
