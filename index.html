@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Order Summary" %}
+
+{% block content %}
+
+<h2 class="govuk-heading-l">{{pageName}}</h2>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+
+<div class="govuk-!-padding-right-3">
+
+</div>
+        </div>
+
+
+
+     <div class="govuk-grid-column-one-half">
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Order Summary"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Initial page testing new GDS tutorial ideas"
+      },
+      actions: {
+        items: [
+          {
+            href: "/order-summary/order-summary",
+            text: "Version-1",
+            visuallyHiddenText: "Version 1"
+          }
+        ]
+      }
+      
+    }
+  ]
+}) }}
+
+
+ 
+</div>
+
+  <div class="govuk-grid-column-one-half">
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "TBD"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "TBD"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "#",
+            visuallyHiddenText: "#"
+          }
+        ]
+      }
+      
+    }
+  ]
+}) }}
+
+
+ 
+  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+  </div>
+</div>
+{% endblock %}
